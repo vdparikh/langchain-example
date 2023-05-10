@@ -40,7 +40,7 @@ def query():
 
     #llama = LlamaCppEmbeddings(model_path=model)
 
-    retriever = db.as_retriever()
+    retriever = db.as_retriever(search_kwargs={"k": 1})
 
     callbacks = [StreamingStdOutCallbackHandler()]
 
