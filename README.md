@@ -1,5 +1,5 @@
 # langchain-example
-
+This example demonstrates how to ingest custom text and query it for questions. It uses local LLM and does not need OpenAI or HuggingFace API.
 
 ### Download the models
 Download below 2 files and place them in `models` directory
