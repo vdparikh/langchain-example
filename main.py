@@ -14,7 +14,7 @@ texts = [
     "The idea behind security by design is to minimize the risk of security vulnerabilities and threats by designing products and systems with security in mind from the start. This means considering security requirements and best practices at every stage of the design and development process, from the initial planning and architecture design to the final testing and deployment."
 ]
 
-persist_directory = 'db'
+persist_directory = 'db_1'
 llama = LlamaCppEmbeddings(model_path="./models/ggml-model-q4_0.bin",n_ctx = 1024, n_threads=64, n_batch=1024)
 
 db = Chroma(persist_directory=persist_directory, embedding_function=llama)
@@ -32,8 +32,7 @@ def ingest():
 
     #db = Chroma.from_documents(texts, llama, persist_directory=persist_directory)
 
-def query(): 
-    q = "What is security by design?"
+def query(q): 
     print(q)
 
     #db = Chroma(persist_directory=persist_directory, embedding_function=llama)
@@ -55,5 +54,5 @@ def query():
     return answer
 
 
-ingest()
-query()
+#ingest()
+query("What is security engineering")
